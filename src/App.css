@@ -1,0 +1,16 @@
+/* src/styles.css */
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+/* Add your custom styles or overrides here */
+@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300&display=swap');
+
+
+span.category-title {
+    font-family: 'Lobster', sans-serif;
+}
+
+span.shop-now {
+    font-family: 'Cormorant Garamond', serif;
+}
