@@ -4,7 +4,7 @@ const Category = ({ id, title, imageUrl }) => {
     return (
         <div
             key={id}
-            className='category-container border-2 border-black  m-2 flex items-center justify-center w-[500px] h-[300px]'
+            className='category-container border-2 border-white  m-2 flex items-center justify-center w-[500px] h-[300px]'
             style={{
                 backgroundImage: `url(${imageUrl})`,
                 backgroundSize: 'cover',

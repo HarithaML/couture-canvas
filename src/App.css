@@ -5,7 +5,7 @@
 /* Add your custom styles or overrides here */
 @import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Galada&display=swap');
 
 span.category-title {
     font-family: 'Lobster', sans-serif;
@@ -13,4 +13,8 @@ span.category-title {
 
 span.shop-now {
     font-family: 'Cormorant Garamond', serif;
+}
+
+span.nav-link {
+    font-family: 'Galada', cursive;
 }
