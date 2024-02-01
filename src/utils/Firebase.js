@@ -1,5 +1,14 @@
 import { initializeApp } from 'firebase/app';
-import { getAuth, signInWithPopup,signInWithRedirect, GoogleAuthProvider ,createUserWithEmailAndPassword,signInWithEmailAndPassword} from 'firebase/auth';
+import {
+    getAuth,
+    signInWithPopup,
+    signInWithRedirect,
+    GoogleAuthProvider,
+    createUserWithEmailAndPassword,
+    signInWithEmailAndPassword,
+    signOut,
+    onAuthStateChanged,
+} from 'firebase/auth';
 import { getFirestore, doc, getDoc, setDoc } from 'firebase/firestore';
 
 // Your web app's Firebase configuration
@@ -48,7 +57,7 @@ export const signInWithGoogleRedirect = async () => {
 };
 
 // Function to create or retrieve a user document from Firestore based on user authentication data
-export const createUserDocumentFromAuth = async (userAuth,additionalInformation={}) => {
+export const createUserDocumentFromAuth = async (userAuth, additionalInformation = {}) => {
     try {
         if (userAuth && userAuth.uid) {
             // Create a reference to the user's document in the 'users' collection
@@ -91,23 +100,28 @@ export const createUserDocumentFromAuth = async (userAuth,additionalInformation=
 
 export const createUserWithEmailAndPasswordLocal = async (email, password) => {
     try {
-      if (!email || !password) {
-        throw new Error("Email and password are required.");
-      }
-  
-      const userCredential = await createUserWithEmailAndPassword(auth, email, password);
-      const user = userCredential.user;
-  
-      console.log("User successfully created:", user);
-      return user;
-    } catch (error) {
-      console.error("Error creating user:", error.message);
-      throw error;
-    }
-  };
+        if (!email || !password) {
+            throw new Error("Email and password are required.");
+        }
 
-  export const signInAuthUserWithEmailAndPassword = async (email, password) => {
+        const userCredential = await createUserWithEmailAndPassword(auth, email, password);
+        const user = userCredential.user;
+
+        console.log("User successfully created:", user);
+        return user;
+    } catch (error) {
+        console.error("Error creating user:", error.message);
+        throw error;
+    }
+};
+
+export const signInAuthUserWithEmailAndPassword = async (email, password) => {
     if (!email || !password) return;
-  
+
     return await signInWithEmailAndPassword(auth, email, password);
-  };
+};
+
+export const signOutUser = async () => await signOut(auth);
+
+export const onAuthStateChangedListener = (callback) =>
+  onAuthStateChanged(auth, callback);

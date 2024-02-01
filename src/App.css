@@ -12,6 +12,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Dekko&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=EB+Garamond&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Macondo&display=swap');
 span.category-title {
     font-family: 'Lobster', sans-serif;
 }
@@ -32,4 +33,7 @@ span.signin-button {
 }
 span.sign-title{
     font-family: 'Archivo Black', sans-serif;
+}
+span.product{
+    font-family: 'Macondo', cursive;
 }

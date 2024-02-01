@@ -1,10 +1,14 @@
 import React, { useState } from "react";
-import InputField from "../components/reusable/InputField";
-import Button from "../components/reusable/Button";
-import { createUserDocumentFromAuth, createUserWithEmailAndPasswordLocal } from "../utils/Firebase";
+import InputField from "../reusable/InputField";
+
+import Button from "../reusable/Button";
+
+import { createUserDocumentFromAuth, createUserWithEmailAndPasswordLocal } from "../../utils/Firebase";
 
 
-const SignUp = ({ switchToSignIn }) => {
+const SignUp = () => {
+ 
+
     const [formData, setFormData] = useState({
         displayName: "",
         email: "",
@@ -41,6 +45,8 @@ const SignUp = ({ switchToSignIn }) => {
             // Use Firebase function to create user with email and password
             const user = await createUserWithEmailAndPasswordLocal(email, password);
 
+          
+            
             await createUserDocumentFromAuth(user, { displayName });
 
             // Clear form data
@@ -53,6 +59,7 @@ const SignUp = ({ switchToSignIn }) => {
 
             // Handle successful sign-up (you can redirect or show a success message)
             console.log("User successfully signed up.");
+    
         } catch (error) {
             // Handle error from createUserWithEmailAndPasswordFunction
             console.error("Error during sign-up:", error.message);
@@ -66,40 +73,28 @@ const SignUp = ({ switchToSignIn }) => {
     ];
 
     return (
-        <div className="flex flex-row sign-up  m-4 p-4 h-[800px]">
-            <div className="bg-[#594157] flex items-center justify-center flex-col p-8 w-1/2 " >
+        <div className="w-1/2 m-4 p-4 h-[800px] bg-white  sign-in rounded-xl flex flex-col items-center justify-center">
+
+            <span className=" text-5xl mb-4" >New User?</span>
+            <span className="sign-title text-5xl ">Sign Up</span>
+            <form className="mt-6">
+                {inputFields.map((field) => (
+                    <InputField
+                        key={field.id}
+                        type={field.type}
+                        id={field.id}
+                        label={field.label}
+                        value={formData[field.id]}
+                        onChange={(value) => handleInputChange(field.id, value)}
+                    />
+                ))}
+
+            </form>
+            <Button onClick={handleSignUp} >
+                Sign Up
+            </Button>
 
 
-                <span className="signin-text text-3xl font-bold text-white">Register with us and explore the latest trends, exclusive offers, and personalized recommendations just for you.</span>
-                <div className=" mt-8 ">
-                    <span className=" signin-button   font-bold  text-3xl text-white"> Already have an account?</span>
-                    <button className="switch-to-signIn  border-2  p-2 rounded-xl ml-2" onClick={switchToSignIn}>
-                        <span className=" signin-button  font-bold  text-3xl text-white">Sign In</span>
-                    </button>
-                </div>
-
-            </div>
-            <div className="bg-white w-1/2 sign-in rounded-xl flex flex-col items-center justify-center p-4">
-                <div className="flex flex-col items-center justify-center">
-                    <span className="sign-title text-6xl">Sign Up</span>
-                    <form className="mt-6">
-                        {inputFields.map((field) => (
-                            <InputField
-                                key={field.id}
-                                type={field.type}
-                                id={field.id}
-                                label={field.label}
-                                value={formData[field.id]}
-                                onChange={(value) => handleInputChange(field.id, value)}
-                            />
-                        ))}
-                        
-                    </form>
-                    <Button  onClick={handleSignUp} >
-                            Sign Up
-                        </Button>
-                </div>
-            </div>
         </div>
     );
 };
