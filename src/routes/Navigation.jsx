@@ -9,12 +9,12 @@ const Navigation = () => {
   const navLinks = [
     { to: '/shop', text: 'Shop' },
     { to: '/contact', text: 'Contact' },
-    { to: '/sign-in', text: 'Sign In' },
+    { to: '/auth', text: 'SignIn' },
   ];
 
   return (
     <Fragment>
-      <div className="flex flex-row justify-between m-2">
+      <div className="flex flex-row justify-between p-4 border-2 m-4 border-double">
         <Logo />
         <div className="flex flex-row mr-8 mt-6">
           {navLinks.map((link, index) => (

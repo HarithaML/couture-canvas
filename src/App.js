@@ -1,24 +1,22 @@
 import React from 'react';
-import { Routes, Route } from 'react-router-dom'
+import { Routes, Route } from 'react-router-dom';
 import './App.css';
 import Home from './routes/Home';
 import Navigation from './routes/Navigation';
 import Shop from './routes/Shop';
-import SignIn from './routes/SignIn';
-
+import Auth from './routes/Auth';
 
 const App = () => {
   return (
-    <div className='bg-[#594157] w-screen h-screen p-4'>
+    <div className='bg-[#594157] pt-4 h-dvh'>
       <Routes>
         <Route path="/" element={<Navigation />}>
           <Route index element={<Home />} />
           <Route path="shop" element={<Shop />} />
-          <Route path="sign-in" element={<SignIn/>} />
+          <Route path="auth" element={<Auth/>} />
         </Route>
       </Routes>
     </div>
-
   );
 };
 

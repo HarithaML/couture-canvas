@@ -6,7 +6,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Galada&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Waterfall&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dekko&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond&display=swap');
 span.category-title {
     font-family: 'Lobster', sans-serif;
 }
@@ -17,4 +22,14 @@ span.shop-now {
 
 span.nav-link {
     font-family: 'Galada', cursive;
+}
+
+span.signin-text {
+    font-family: 'Dekko', cursive;
+}
+span.signin-button {
+    font-family: 'EB Garamond', serif;
+}
+span.sign-title{
+    font-family: 'Archivo Black', sans-serif;
 }
