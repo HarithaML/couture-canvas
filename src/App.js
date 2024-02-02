@@ -1,4 +1,4 @@
-import React from 'react';
+import React,{useContext} from 'react';
 import { Routes, Route  } from 'react-router-dom';
 
 import './App.css';
@@ -7,11 +7,14 @@ import Navigation from './routes/Navigation';
 import Shop from './routes/Shop';
 import Auth from './routes/Auth';
 import Contact from './routes/Contact';
+import Checkout from './components/checkout/Checkout';
+
 
 
 const App = () => {
+
   return (
-    <div className='bg-[#594157] pt-4 h-dvh'>
+    <div className='bg-[#594157] pt-4 h-dvh' >
       <Routes>
 
         <Route path="/" element={<Navigation />}>
@@ -19,6 +22,7 @@ const App = () => {
           <Route path="shop" element={<Shop />} />
           <Route path="auth" element={<Auth/>} />
           <Route path="contact" element={<Contact/>} />
+          <Route path="checkout" element={<Checkout/>}/>
         </Route>
    
       </Routes>

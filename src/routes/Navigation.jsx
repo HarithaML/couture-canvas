@@ -6,7 +6,7 @@ import NavLink from '../components/navigation/NavLink';
 import ShoppingCart from '../components/navigation/ShoppingCart';
 import { UserContext } from '../contexts/User';
 import { signOutUser } from '../utils/Firebase';
-import CartDropdown from '../components/navigation/CartDropdown';
+import CartDropdown from '../components/cart-dropdown/CartDropdown';
 import { CartContext } from '../contexts/Cart';
 
 
