@@ -1,13 +1,13 @@
-import React, { useState } from "react";
+import React, {useState} from "react";
 import InputField from "../reusable/InputField";
 
 import Button from "../reusable/Button";
 
-import { createUserDocumentFromAuth, createUserWithEmailAndPasswordLocal } from "../../utils/Firebase";
+import {createUserDocumentFromAuth, createUserWithEmailAndPasswordLocal} from "../../utils/Firebase";
 
 
 const SignUp = () => {
- 
+
 
     const [formData, setFormData] = useState({
         displayName: "",
@@ -17,12 +17,12 @@ const SignUp = () => {
     });
 
     const handleInputChange = (field, value) => {
-        setFormData({ ...formData, [field]: value });
+        setFormData({...formData, [field]: value});
     };
 
     const handleSignUp = async (event) => {
         event.preventDefault();
-        const { displayName, email, password, confirmPassword } = formData;
+        const {displayName, email, password, confirmPassword} = formData;
 
         // Validation checks
         if (!displayName || !email || !password || !confirmPassword) {
@@ -45,9 +45,8 @@ const SignUp = () => {
             // Use Firebase function to create user with email and password
             const user = await createUserWithEmailAndPasswordLocal(email, password);
 
-          
-            
-            await createUserDocumentFromAuth(user, { displayName });
+
+            await createUserDocumentFromAuth(user, {displayName});
 
             // Clear form data
             setFormData({
@@ -59,23 +58,23 @@ const SignUp = () => {
 
             // Handle successful sign-up (you can redirect or show a success message)
             console.log("User successfully signed up.");
-    
+
         } catch (error) {
             // Handle error from createUserWithEmailAndPasswordFunction
             console.error("Error during sign-up:", error.message);
         }
     };
     const inputFields = [
-        { type: "text", id: "displayName", label: "Display Name" },
-        { type: "email", id: "email", label: "Email" },
-        { type: "password", id: "password", label: "Password" },
-        { type: "password", id: "confirmPassword", label: "Confirm Password" },
+        {type: "text", id: "displayName", label: "Display Name"},
+        {type: "email", id: "email", label: "Email"},
+        {type: "password", id: "password", label: "Password"},
+        {type: "password", id: "confirmPassword", label: "Confirm Password"},
     ];
 
     return (
         <div className="w-1/2 m-4 p-4 h-[800px] bg-white  sign-in rounded-xl flex flex-col items-center justify-center">
 
-            <span className=" text-5xl mb-4" >New User?</span>
+            <span className=" text-5xl mb-4">New User?</span>
             <span className="sign-title text-5xl ">Sign Up</span>
             <form className="mt-6">
                 {inputFields.map((field) => (
@@ -90,7 +89,7 @@ const SignUp = () => {
                 ))}
 
             </form>
-            <Button onClick={handleSignUp} >
+            <Button onClick={handleSignUp}>
                 Sign Up
             </Button>
 

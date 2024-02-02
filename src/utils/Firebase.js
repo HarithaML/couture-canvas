@@ -1,4 +1,4 @@
-import { initializeApp } from 'firebase/app';
+import {initializeApp} from 'firebase/app';
 import {
     getAuth,
     signInWithPopup,
@@ -9,7 +9,7 @@ import {
     signOut,
     onAuthStateChanged,
 } from 'firebase/auth';
-import { getFirestore, doc, getDoc, setDoc } from 'firebase/firestore';
+import {getFirestore, doc, getDoc, setDoc} from 'firebase/firestore';
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
@@ -38,8 +38,8 @@ export const db = getFirestore();
 export const signInWithGooglePopup = async () => {
     try {
         const result = await signInWithPopup(auth, provider);
-        const { user } = result;
-        return { user };
+        const {user} = result;
+        return {user};
     } catch (error) {
         throw new Error(`Google Sign-In with Popup failed: ${error.message}`);
     }
@@ -75,7 +75,7 @@ export const createUserDocumentFromAuth = async (userAuth, additionalInformation
             } else {
                 // If the document doesn't exist, create it with user information
                 console.error('User snapshot does not exist');
-                const { displayName, email } = userAuth;
+                const {displayName, email} = userAuth;
                 const createdAt = new Date();
 
                 try {
@@ -124,4 +124,4 @@ export const signInAuthUserWithEmailAndPassword = async (email, password) => {
 export const signOutUser = async () => await signOut(auth);
 
 export const onAuthStateChangedListener = (callback) =>
-  onAuthStateChanged(auth, callback);
+    onAuthStateChanged(auth, callback);

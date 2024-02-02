@@ -1,5 +1,5 @@
-import React,{useContext} from 'react';
-import { Routes, Route  } from 'react-router-dom';
+import React, {useContext} from 'react';
+import {Routes, Route} from 'react-router-dom';
 
 import './App.css';
 import Home from './routes/Home';
@@ -10,24 +10,23 @@ import Contact from './routes/Contact';
 import Checkout from './components/checkout/Checkout';
 
 
-
 const App = () => {
 
-  return (
-    <div className='bg-[#594157] pt-4 h-dvh' >
-      <Routes>
+    return (
+        <div className='bg-[#594157] pt-4 h-dvh'>
+            <Routes>
 
-        <Route path="/" element={<Navigation />}>
-          <Route index element={<Home />} />
-          <Route path="shop" element={<Shop />} />
-          <Route path="auth" element={<Auth/>} />
-          <Route path="contact" element={<Contact/>} />
-          <Route path="checkout" element={<Checkout/>}/>
-        </Route>
-   
-      </Routes>
-    </div>
-  );
+                <Route path="/" element={<Navigation/>}>
+                    <Route index element={<Home/>}/>
+                    <Route path="shop" element={<Shop/>}/>
+                    <Route path="auth" element={<Auth/>}/>
+                    <Route path="contact" element={<Contact/>}/>
+                    <Route path="checkout" element={<Checkout/>}/>
+                </Route>
+
+            </Routes>
+        </div>
+    );
 };
 
 export default App;

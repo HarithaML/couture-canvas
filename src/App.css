@@ -16,6 +16,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap');
+
 span.category-title {
     font-family: 'Lobster', sans-serif;
 }
@@ -31,19 +32,23 @@ span.nav-link {
 span.signin-text {
     font-family: 'Dekko', cursive;
 }
+
 span.signin-button {
     font-family: 'EB Garamond', serif;
 }
-span.sign-title{
+
+span.sign-title {
     font-family: 'Archivo Black', sans-serif;
 }
-span.product{
+
+span.product {
     font-family: 'Macondo', cursive;
 }
 
 span.cart-title {
     font-family: 'Josefin Sans', sans-serif;
 }
-span.cart-empty{
+
+span.cart-empty {
     font-family: 'DM Serif Display', serif;
 }
