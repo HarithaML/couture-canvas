@@ -10,17 +10,17 @@ const Checkout = () => {
         <div className="bg-white w-[1500px] h-[800px] m-10 p-20">
             <span className="cart-title text-6xl ">Your Cart</span>
             <hr className="my-4 border-t border-gray-300"/>
-            <div className="flex flex-row">
+            <div className="flex flex-row items-center justify-center">
                 {cartItems.length === 0 ? (
                     <div
-                        className="flex flex-col items-center justify-center mt-[200px] bg-[#BEE7E8] rounded-full  overflow-hidden ">
-                        <span className=" cart-empty text-3xl">Your cart is empty.</span>
+                        className="flex flex-col items-center justify-center mt-[100px] bg-[#BEE7E8] rounded-full w-[400px] h-[400px] ">
+                        <span className=" cart-empty text-2xl">Your cart is empty.</span>
                         <MoodEmpty
                             size={100}
                             strokeWidth={2}
                             color={'black'}
                         />
-                        <span className="cart-empty text-3xl">Add Products to your cart!!</span>
+                        <span className="cart-empty text-2xl">Add Products to your cart!!</span>
                     </div>
 
                 ) : (
