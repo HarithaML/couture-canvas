@@ -1,5 +1,5 @@
 import React from 'react';
-import Categories from '../components/home/Categories';
+import Category from '../components/home/Category';
 
 
 const Home = () => {
@@ -32,7 +32,7 @@ const Home = () => {
     ];
     return (
         <div>
-            <Categories categories={categories}/>
+            <Category categories={categories}/>
         </div>
     );
 };
