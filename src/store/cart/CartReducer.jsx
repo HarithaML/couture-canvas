@@ -1,4 +1,4 @@
-import { CART_ACTION_TYPES } from './CartActionTypes';
+import {CART_ACTION_TYPES} from './CartActionTypes';
 
 const CART_INITIAL_STATE = {
     isCartOpen: false,
@@ -6,7 +6,7 @@ const CART_INITIAL_STATE = {
 };
 
 export const CartReducer = (state = CART_INITIAL_STATE, action = {}) => {
-    const { type, payload } = action;
+    const {type, payload} = action;
 
     switch (type) {
         case CART_ACTION_TYPES.SET_CART_ITEMS:

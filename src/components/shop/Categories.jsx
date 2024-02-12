@@ -1,6 +1,6 @@
 import React from "react";
 
-import { useSelector } from "react-redux";
+import {useSelector} from "react-redux";
 
 
 import Product from "./Product";
@@ -8,7 +8,7 @@ import SeeMoreProduct from "./SeeMoreProduct";
 import {selectCategoriesMap} from "../../store/category/CategorySelector";
 
 const Categories = () => {
-    const  categoriesMap = useSelector(selectCategoriesMap);
+    const categoriesMap = useSelector(selectCategoriesMap);
 
 
     // Check if categoriesMap exists before mapping over it
@@ -19,14 +19,15 @@ const Categories = () => {
 
     return (
         <div className=" m-8 ">
-            {Object.keys(categoriesMap).map((title)=>(
-                <div className="flex flex-col  ">
+            {Object.keys(categoriesMap).map((title) => (
+                <div key={title} className="flex flex-col  ">
                     <div>
                         <span className="cart-title text-6xl text-white">{title}</span>
                     </div>
                     <div className="flex flex-row   overflow-y-auto">
-                        {categoriesMap[title].slice(0,  4).map((product)=>(<Product key={product.id} product={product}/>))}
-                        <SeeMoreProduct  title={title}/>
+                        {categoriesMap[title].slice(0, 4).map((product) => (
+                            <Product key={product.id} product={product}/>))}
+                        <SeeMoreProduct title={title}/>
                     </div>
                 </div>
             ))}

@@ -1,7 +1,5 @@
 import React from "react";
-import {Trash} from 'tabler-icons-react';
-import {CirclePlus} from 'tabler-icons-react';
-import {CircleMinus} from 'tabler-icons-react';
+import {CircleMinus, CirclePlus, Trash} from 'tabler-icons-react';
 
 import {useDispatch, useSelector} from "react-redux";
 import {selectCartItems} from "../../store/cart/CartSelector";

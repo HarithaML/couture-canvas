@@ -19,12 +19,12 @@ const Shop = () => {
         getCategoriesMap();
     }, []);
 
-    return(
+    return (
 
-    <Routes>
-        <Route index element={<Categories />} />
-        <Route path=':category' element={<Category />} />
-    </Routes>
+        <Routes>
+            <Route index element={<Categories/>}/>
+            <Route path=':category' element={<Category/>}/>
+        </Routes>
     )
 };
 

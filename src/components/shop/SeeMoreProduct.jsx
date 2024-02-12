@@ -9,7 +9,7 @@ const SeeMoreProduct = ({title}) => {
     const dispatch = useDispatch();
     const navigate = useNavigate();
 
-    const handleAdd = ()=>{
+    const handleAdd = () => {
         dispatch(setCurrentCategory(title));
         navigate(`:${title}`);
     }
@@ -23,7 +23,7 @@ const SeeMoreProduct = ({title}) => {
                 color={'black'}
                 onClick={handleAdd}
             />
-            <span className="cart-title text-4xl" >See More</span>
+            <span className="cart-title text-4xl">See More</span>
         </div>
     )
 

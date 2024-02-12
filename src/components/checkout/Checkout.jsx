@@ -3,12 +3,19 @@ import CartItem from './CartItem'
 import {MoodEmpty} from 'tabler-icons-react';
 import {useSelector} from "react-redux";
 import {selectCartItems, selectCartTotal} from "../../store/cart/CartSelector";
+import Button from "../reusable/Button";
+import {useNavigate} from "react-router-dom";
 
 const Checkout = () => {
     const cartItems = useSelector(selectCartItems);
     const cartItemTotalPrice = useSelector(selectCartTotal);
+    const navigate = useNavigate();
+
+    const handlePay = () => {
+        navigate('/payment')
+    }
     return (
-        <div className="bg-white w-[1500px] h-[800px] m-10 p-20">
+        <div className="bg-white w-[1500px] h-[850px] m-10 p-20">
             <span className="cart-title text-6xl ">Your Cart</span>
             <hr className="my-4 border-t border-gray-300"/>
             <div className="flex flex-row items-center justify-center">
@@ -38,9 +45,14 @@ const Checkout = () => {
                             <span
                                 className="flex col-start-4 col-end-5 items-center justify-start product text-4xl">${cartItemTotalPrice}</span>
                         </div>
+
                     </div>
                 )}
 
+
+            </div>
+            <div className="flex justify-center items-center m-[200px]">
+                <Button onClick={handlePay}>Pay Now</Button>
             </div>
 
         </div>

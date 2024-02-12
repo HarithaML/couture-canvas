@@ -7,13 +7,13 @@ export const CATEGORY_INITIAL_STATE = {
 };
 
 export const CategoryReducer = (state = CATEGORY_INITIAL_STATE, action = {}) => {
-    const { type, payload } = action;
+    const {type, payload} = action;
 
     switch (type) {
         case CATEGORY_ACTION_TYPES.SET_CATEGORY_MAP:
-            return { ...state, categoriesMap: payload };
+            return {...state, categoriesMap: payload};
         case CATEGORY_ACTION_TYPES.SET_CURRENT_CATEGORY:
-            return { ...state, currentCategory: payload };
+            return {...state, currentCategory: payload};
         default:
             return state;
     }

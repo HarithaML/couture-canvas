@@ -2,12 +2,7 @@ import React, {useState} from "react";
 import InputField from "../reusable/InputField";
 
 import Button from "../reusable/Button";
-import {
-    auth,
-    signInWithGooglePopup,
-    createUserDocumentFromAuth,
-    signInAuthUserWithEmailAndPassword,
-} from "../../utils/Firebase";
+import {signInAuthUserWithEmailAndPassword, signInWithGooglePopup,} from "../../utils/Firebase";
 
 
 const SignIn = () => {

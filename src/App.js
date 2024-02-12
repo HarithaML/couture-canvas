@@ -1,10 +1,7 @@
 import React, {useEffect} from 'react';
-import {Routes, Route} from 'react-router-dom';
-import { setCurrentUser } from './store/user/UserAction';
-import {
-    onAuthStateChangedListener,
-    createUserDocumentFromAuth,
-} from '../src/utils/Firebase';
+import {Route, Routes} from 'react-router-dom';
+import {setCurrentUser} from './store/user/UserAction';
+import {createUserDocumentFromAuth, onAuthStateChangedListener,} from '../src/utils/Firebase';
 
 import './App.css';
 import Home from './routes/Home';
@@ -14,7 +11,7 @@ import Auth from './routes/Auth';
 import Contact from './routes/Contact';
 import Checkout from './components/checkout/Checkout';
 import {useDispatch} from "react-redux";
-
+import Payment from "./components/payment-form/Payment";
 
 
 const App = () => {
@@ -39,6 +36,7 @@ const App = () => {
                     <Route path="auth" element={<Auth/>}/>
                     <Route path="contact" element={<Contact/>}/>
                     <Route path="checkout" element={<Checkout/>}/>
+                    <Route path="payment" element={<Payment/>}/>
                 </Route>
 
             </Routes>

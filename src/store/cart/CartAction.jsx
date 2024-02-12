@@ -1,6 +1,5 @@
-import { createAction } from '../../utils/Reducer';
+import {createAction} from '../../utils/Reducer';
 import {CART_ACTION_TYPES} from './CartActionTypes';
-
 
 
 const addCartItem = (cartItems, productToAdd) => {
@@ -11,12 +10,12 @@ const addCartItem = (cartItems, productToAdd) => {
     if (existingCartItem) {
         return cartItems.map((cartItem) =>
             cartItem.id === productToAdd.id
-                ? { ...cartItem, quantity: cartItem.quantity + 1 }
+                ? {...cartItem, quantity: cartItem.quantity + 1}
                 : cartItem
         );
     }
 
-    return [...cartItems, { ...productToAdd, quantity: 1 }];
+    return [...cartItems, {...productToAdd, quantity: 1}];
 };
 
 const removeCartItem = (cartItems, cartItemToRemove) => {
@@ -33,7 +32,7 @@ const removeCartItem = (cartItems, cartItemToRemove) => {
     // return back cartitems with matching cart item with reduced quantity
     return cartItems.map((cartItem) =>
         cartItem.id === cartItemToRemove.id
-            ? { ...cartItem, quantity: cartItem.quantity - 1 }
+            ? {...cartItem, quantity: cartItem.quantity - 1}
             : cartItem
     );
 };

@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React from "react";
 
 const InputField = ({type, id, label, value, onChange}) => (
     <div className="m-8">

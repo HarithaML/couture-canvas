@@ -1,5 +1,6 @@
 import USER_ACTION_TYPES from './UserActionTypes';
-import { createAction } from '../../utils/Reducer';
+import {createAction} from '../../utils/Reducer';
+
 export const setCurrentUser = (user) => {
     // Remove non-serializable properties from user object
     const serializableUser = user ? {
