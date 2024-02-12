@@ -1,0 +1,6 @@
+const USER_ACTION_TYPES = {
+    SET_CURRENT_USER: 'user/SET_CURRENT_USER',
+    SIGN_OUT_USER: 'user/SIGN_OUT_USER',
+};
+
+export default USER_ACTION_TYPES;

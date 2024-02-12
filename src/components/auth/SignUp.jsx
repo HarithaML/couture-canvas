@@ -57,7 +57,7 @@ const SignUp = () => {
             });
 
             // Handle successful sign-up (you can redirect or show a success message)
-            console.log("User successfully signed up.");
+            console.log("user successfully signed up.");
 
         } catch (error) {
             // Handle error from createUserWithEmailAndPasswordFunction

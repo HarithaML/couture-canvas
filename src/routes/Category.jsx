@@ -1,10 +1,11 @@
 import React from "react";
-import {useContext} from "react";
-import {CategoriesContext} from "../contexts/Categories"
 import Product from "../components/shop/Product";
+import {useSelector} from "react-redux";
+import {selectCategoriesMap, selectCurrentCategory} from "../store/category/CategorySelector";
 
 const Category = () => {
-    const { categoriesMap,currentCategory } = useContext(CategoriesContext);
+    const  categoriesMap  = useSelector(selectCategoriesMap);
+    const currentCategory = useSelector(selectCurrentCategory)
 
     // Check if categoriesMap exists before mapping over it
     if (!categoriesMap) {

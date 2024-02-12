@@ -1,14 +1,17 @@
-import React, {useContext} from "react";
-import {CategoriesContext} from "../../contexts/Categories";
+import React from "react";
+
 import {CirclePlus} from 'tabler-icons-react';
 import {useNavigate} from "react-router-dom";
+import {useDispatch} from "react-redux";
+import {setCurrentCategory} from "../../store/category/CategoryAction";
 
 const SeeMoreProduct = ({title}) => {
+    const dispatch = useDispatch();
     const navigate = useNavigate();
-    const {setCurrentCategory} = useContext(CategoriesContext);
+
     const handleAdd = ()=>{
-        setCurrentCategory(title);
-        navigate('/category')
+        dispatch(setCurrentCategory(title));
+        navigate(`:${title}`);
     }
 
 

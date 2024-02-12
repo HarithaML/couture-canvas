@@ -1,15 +1,22 @@
-import React, {useContext} from "react";
+import React from "react";
 import {Trash} from 'tabler-icons-react';
 import {CirclePlus} from 'tabler-icons-react';
 import {CircleMinus} from 'tabler-icons-react';
-import {CartContext} from "../../contexts/Cart";
+
+import {useDispatch, useSelector} from "react-redux";
+import {selectCartItems} from "../../store/cart/CartSelector";
+import {addItemToCart, clearItemFromCart, removeItemFromCart} from "../../store/cart/CartAction";
 
 const CartItem = ({cartItem}) => {
-    const {addItemToCart, removeItemFromCart, removeItemTotallyFromCart} = useContext(CartContext);
+    const dispatch = useDispatch();
+    const cartItems = useSelector(selectCartItems);
+    const clearItemHandler = () =>
+        dispatch(clearItemFromCart(cartItems, cartItem));
+    const addItemHandler = () => dispatch(addItemToCart(cartItems, cartItem));
+    const removeItemHandler = () =>
+        dispatch(removeItemFromCart(cartItems, cartItem));
+
     const {imageUrl, price, name, quantity} = cartItem;
-    const handleAdd = () => addItemToCart(cartItem);
-    const handleRemove = () => removeItemFromCart(cartItem);
-    const handleTotalRemove = () => removeItemTotallyFromCart(cartItem);
     return (
 
         <div className="grid grid-cols-5 gap-2 mt-4 mb-4 items-center justify-center">
@@ -20,7 +27,7 @@ const CartItem = ({cartItem}) => {
                     size={48}
                     strokeWidth={2}
                     color={'black'}
-                    onClick={handleRemove}
+                    onClick={removeItemHandler}
                 />
                 <span className='product text-4xl'>
                     {quantity}
@@ -29,7 +36,7 @@ const CartItem = ({cartItem}) => {
                     size={48}
                     strokeWidth={2}
                     color={'black'}
-                    onClick={handleAdd}
+                    onClick={addItemHandler}
                 />
 
             </div>
@@ -39,7 +46,7 @@ const CartItem = ({cartItem}) => {
                 size={40}
                 strokeWidth={2}
                 color={'black'}
-                onClick={handleTotalRemove}
+                onClick={clearItemHandler}
             />
 
         </div>

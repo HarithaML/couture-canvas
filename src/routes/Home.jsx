@@ -1,5 +1,6 @@
 import React from 'react';
 import Category from '../components/home/Category';
+import Welcome from "../components/home/Welcome";
 
 
 const Home = () => {
@@ -32,6 +33,7 @@ const Home = () => {
     ];
     return (
         <div>
+            <Welcome/>
             <Category categories={categories}/>
         </div>
     );

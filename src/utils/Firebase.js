@@ -87,7 +87,7 @@ export const createUserDocumentFromAuth = async (userAuth, additionalInformation
         if (userAuth && userAuth.uid) {
             // Create a reference to the user's document in the 'users' collection
             const userDocRef = doc(db, 'users', userAuth.uid);
-            console.log('User Document Reference:', userDocRef);
+            console.log('user Document Reference:', userDocRef);
 
             // Get the snapshot of the user's document
             const userDocSnapshot = await getDoc(userDocRef);
@@ -95,11 +95,11 @@ export const createUserDocumentFromAuth = async (userAuth, additionalInformation
             if (userDocSnapshot.exists()) {
                 // If the document exists, log user data and return the document reference
                 const userData = userDocSnapshot.data();
-                console.log('User Data:', userData);
+                console.log('user Data:', userData);
                 return userDocRef;
             } else {
                 // If the document doesn't exist, create it with user information
-                console.error('User snapshot does not exist');
+                console.error('user snapshot does not exist');
                 const {displayName, email} = userAuth;
                 const createdAt = new Date();
 
@@ -132,7 +132,7 @@ export const createUserWithEmailAndPasswordLocal = async (email, password) => {
         const userCredential = await createUserWithEmailAndPassword(auth, email, password);
         const user = userCredential.user;
 
-        console.log("User successfully created:", user);
+        console.log("user successfully created:", user);
         return user;
     } catch (error) {
         console.error("Error creating user:", error.message);

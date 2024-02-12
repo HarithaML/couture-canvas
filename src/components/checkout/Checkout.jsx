@@ -1,11 +1,12 @@
-import React, {useContext} from "react";
-
-import {CartContext} from "../../contexts/Cart";
+import React from "react";
 import CartItem from './CartItem'
 import {MoodEmpty} from 'tabler-icons-react';
+import {useSelector} from "react-redux";
+import {selectCartItems, selectCartTotal} from "../../store/cart/CartSelector";
 
 const Checkout = () => {
-    const {cartItems, cartItemTotalPrice} = useContext(CartContext);
+    const cartItems = useSelector(selectCartItems);
+    const cartItemTotalPrice = useSelector(selectCartTotal);
     return (
         <div className="bg-white w-[1500px] h-[800px] m-10 p-20">
             <span className="cart-title text-6xl ">Your Cart</span>

@@ -1,13 +1,19 @@
-import React, {useContext} from 'react';
-import {Link} from 'react-router-dom';
+import React from 'react';
+
 import {ShoppingBag} from 'tabler-icons-react';
-import {CartContext} from '../../contexts/Cart';
+
+import {useDispatch, useSelector} from "react-redux";
+import {selectCartCount, selectIsCartOpen} from "../../store/cart/CartSelector";
+import {setIsCartOpen} from "../../store/cart/CartAction";
 
 const ShoppingCart = () => {
-    const {isCartOpen, setIsCartOpen, cartItemCount} = useContext(CartContext);
+
+    const isCartOpen = useSelector(selectIsCartOpen);
+    const cartItemCount = useSelector(selectCartCount);
+    const dispatch = useDispatch();
 
     const handleClick = () =>
-        setIsCartOpen(!isCartOpen);
+        dispatch(setIsCartOpen(!isCartOpen));
 
     return (
 
